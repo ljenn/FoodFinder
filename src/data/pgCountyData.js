@@ -1,0 +1,98 @@
+/**
+ * Prince George's County, MD — Food Pantry & Distribution Data
+ *
+ * Curated from official county sources:
+ * - https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services
+ * - https://pgcfec.org/resources/find-food-food-pantry-listings/
+ * - https://data.princegeorgescountymd.gov
+ *
+ * PG County DSS permanent pantries (announced April 2025):
+ * Monday–Friday, 8:00 AM – 4:30 PM
+ */
+export const pgCountyPantries = [
+  {
+    id: 'pgc-001',
+    name: 'DSS Largo District Office Food Pantry',
+    organization: 'Prince George\'s County Dept. of Social Services',
+    address: '5012 Rhode Island Ave, Hyattsville, MD 20781',
+    lat: 38.9607,
+    lng: -76.9569,
+    hours: '8:00 AM – 4:30 PM',
+    recurring: 'Monday – Friday',
+    foodTypes: ['Canned Goods', 'Fresh Produce', 'Shelf-Stable Items', 'Groceries'],
+    requirements: 'None — open to all Prince Georgians',
+    notes: 'No registration required. Permanent pantry at DSS district office.',
+    contact: '301-909-7025',
+    website: 'https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services',
+    source: 'Prince George\'s County DSS',
+    sourceUrl: 'https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services',
+  },
+  {
+    id: 'pgc-002',
+    name: 'DSS Forestville District Office Food Pantry',
+    organization: 'Prince George\'s County Dept. of Social Services',
+    address: '3701 Donnell Dr, Forestville, MD 20747',
+    lat: 38.8468,
+    lng: -76.8741,
+    hours: '8:00 AM – 4:30 PM',
+    recurring: 'Monday – Friday',
+    foodTypes: ['Canned Goods', 'Fresh Produce', 'Shelf-Stable Items', 'Groceries'],
+    requirements: 'None — open to all Prince Georgians',
+    notes: 'No registration required. Permanent pantry at DSS district office.',
+    contact: '301-909-7025',
+    website: 'https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services',
+    source: 'Prince George\'s County DSS',
+    sourceUrl: 'https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services',
+  },
+  {
+    id: 'pgc-003',
+    name: 'Capital Area Food Bank — Langley Park Distribution',
+    organization: 'Capital Area Food Bank / PGCFEC',
+    address: '1500 Merrimac Dr, Langley Park, MD 20783',
+    lat: 38.9954,
+    lng: -76.9869,
+    hours: '9:00 AM – 12:00 PM',
+    recurring: 'Every Saturday',
+    foodTypes: ['Fresh Produce', 'Canned Goods', 'Dairy', 'Bread', 'Frozen Meat'],
+    requirements: 'None — open to all',
+    notes: 'Drive-through and walk-up available. First come, first served.',
+    contact: '(202) 644-9807',
+    website: 'https://www.capitalareafoodbank.org/find-food-assistance/',
+    source: 'Capital Area Food Bank',
+    sourceUrl: 'https://www.capitalareafoodbank.org/find-food-assistance/',
+  },
+  {
+    id: 'pgc-004',
+    name: 'PGCFEC Community Food Pantry — Oxon Hill',
+    organization: 'Prince George\'s County Food Equity Council',
+    address: '6200 Oxon Hill Rd, Oxon Hill, MD 20745',
+    lat: 38.8026,
+    lng: -76.9869,
+    hours: '10:00 AM – 1:00 PM',
+    recurring: 'Every Wednesday',
+    foodTypes: ['Canned Goods', 'Fresh Produce', 'Baby Formula', 'Hygiene Items'],
+    requirements: 'Proof of PG County residency preferred',
+    notes: 'Bilingual staff available (English/Spanish).',
+    contact: '',
+    website: 'https://pgcfec.org/resources/find-food-food-pantry-listings/',
+    source: 'PGCFEC',
+    sourceUrl: 'https://pgcfec.org/resources/find-food-food-pantry-listings/',
+  },
+  {
+    id: 'pgc-005',
+    name: 'Capital Area Food Bank Pop-Up — Suitland',
+    organization: 'Capital Area Food Bank',
+    address: '4950 Auth Rd, Suitland, MD 20746',
+    lat: 38.8454,
+    lng: -76.9219,
+    hours: '5:00 PM – 7:00 PM',
+    recurring: 'Every Thursday',
+    foodTypes: ['Pantry Items', 'Fresh Produce'],
+    requirements: 'None',
+    notes: 'Pop-up distribution in retail parking lot. While supplies last.',
+    contact: '(202) 644-9807',
+    website: 'https://www.capitalareafoodbank.org/find-food-assistance/',
+    source: 'Capital Area Food Bank / DC.gov',
+    sourceUrl: 'https://fedsupport.dc.gov/page/capital-area-food-bank',
+  },
+]
