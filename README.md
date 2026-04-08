@@ -1,5 +1,7 @@
 # Food Finder
 
+🔗 [Live Demo](https://ljenn.github.io/FoodFinder)
+
 A React web app that connects families to nearby food distribution events in the Washington DC, Maryland, and Virginia region. Data is pulled live from DC Open Data, Prince George's County DSS, UMD Extension, and the Maryland Department of Agriculture.
 
 ## Prerequisites
