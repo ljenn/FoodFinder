@@ -36,8 +36,7 @@ Populate the app with real data extracted from the following credible sources:
   - Food type chips
   - No requirements toggle
   - Spots available toggle
-- Live data refresh every 24 hours with localStorage caching to avoid redundant fetches
-- Show last updated timestamp in the UI
+- Data loads once on startup; curated static data is shown immediately while the live fetch runs in the background
 - Data source attribution in the footer with license info
 
 ## Technical Stack

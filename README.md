@@ -45,7 +45,7 @@ npm run preview
 - **Radius slider** — adjust the "Within X miles" slider in the left panel to widen or narrow results
 - **List / Map toggle** — switch between a card list and an interactive map; click any pin for full event details
 - **Filters** — narrow results by date, food type, requirements, and spot availability
-- **Data refreshes automatically** every 24 hours; the last updated time is shown in the results toolbar
+- **Data loads once on startup** from live sources; curated data shows immediately as a fallback if the fetch fails
 
 ## Data Sources
 
@@ -66,7 +66,7 @@ src/
     EventCard.jsx       # List view event card
     EventMap.jsx        # Leaflet map with popups
   data/
-    fetchEvents.js      # Live DC GIS fetch + 24hr cache logic
+    fetchEvents.js      # Live DC GIS fetch logic
     dataSources.js      # API endpoint config
     pgCountyData.js     # Curated PG County pantry data
     marylandData.js     # Curated Maryland resource data

@@ -25,54 +25,18 @@ export default function App() {
   const [error, setError] = useState('')
   const [showSources, setShowSources] = useState(false)
   const [searchCenter, setSearchCenter] = useState(DC_DEFAULT)
-  const [lastUpdated, setLastUpdated] = useState(() => {
-    const ts = parseInt(localStorage.getItem('foodfinder_events_ts') || '0', 10)
-    return ts ? new Date(ts) : null
-  })
-
-  // Load data on mount, then refresh every 24 hours.
-  // Uses localStorage to avoid redundant fetches across page reloads.
   useEffect(() => {
-    const CACHE_KEY = 'foodfinder_events'
-    const CACHE_TS_KEY = 'foodfinder_events_ts'
-    const TTL = 24 * 60 * 60 * 1000 // 24 hours in ms
-
-    async function loadEvents(force = false) {
-      const cachedTs = parseInt(localStorage.getItem(CACHE_TS_KEY) || '0', 10)
-      const isStale = Date.now() - cachedTs > TTL
-
-      if (!force && !isStale) {
-        // Use cached data if fresh
-        try {
-          const cached = JSON.parse(localStorage.getItem(CACHE_KEY))
-          if (cached?.length > 0) {
-            setEvents(cached)
-            setLoading(false)
-            return
-          }
-        } catch { /* fall through to fetch */ }
-      }
-
+    async function loadEvents() {
       try {
         const results = await fetchAllEvents()
-        if (results.length > 0) {
-          setEvents(results)
-          localStorage.setItem(CACHE_KEY, JSON.stringify(results))
-          localStorage.setItem(CACHE_TS_KEY, String(Date.now()))
-          setLastUpdated(new Date())
-        }
+        if (results.length > 0) setEvents(results)
       } catch {
         // Curated data already showing — silently ignore
       } finally {
         setLoading(false)
       }
     }
-
     loadEvents()
-
-    // Re-check every 24 hours while the tab is open
-    const interval = setInterval(() => loadEvents(true), TTL)
-    return () => clearInterval(interval)
   }, [])
 
   const handleSearch = async (zip) => {
@@ -167,11 +131,6 @@ export default function App() {
                   ? `${filtered.length} events (loading more…)`
                   : `${filtered.length} event${filtered.length !== 1 ? 's' : ''} found`}
               </p>
-              {lastUpdated && (
-                <p className="last-updated">
-                  Updated {lastUpdated.toLocaleString([], { dateStyle: 'short', timeStyle: 'short' })}
-                </p>
-              )}
             </div>
             <div className="view-toggle" role="group" aria-label="View toggle">
               <button
